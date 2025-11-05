@@ -1,0 +1,1132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>XanaLife Digital Transformation - Pitch Presentation</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary: #2c5f41;
+        --primary-light: #4a8d6a;
+        --secondary: #d4af37;
+        --accent: #1a4d2e;
+        --text-dark: #2c3e50;
+        --text-light: #6c757d;
+        --bg-light: #f8f9fa;
+        --bg-white: #ffffff;
+        --border: #e9ecef;
+        --success: #28a745;
+        --shadow: rgba(0, 0, 0, 0.1);
+        --shadow-lg: rgba(0, 0, 0, 0.15);
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          "Helvetica Neue", Arial, sans-serif;
+        line-height: 1.6;
+        color: var(--text-dark);
+        background: linear-gradient(135deg, #f5f7fa 0%, #e9ecef 100%);
+        padding: 0;
+        margin: 0;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      /* Navigation */
+      nav {
+        background: var(--bg-white);
+        box-shadow: 0 2px 10px var(--shadow);
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        padding: 15px 0;
+      }
+
+      nav .container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 24px;
+        font-weight: 700;
+        color: var(--primary);
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 30px;
+        list-style: none;
+      }
+
+      .nav-links a {
+        color: var(--text-dark);
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s;
+        padding: 5px 10px;
+        border-radius: 5px;
+      }
+
+      .nav-links a:hover {
+        color: var(--primary);
+        background: var(--bg-light);
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(
+          135deg,
+          var(--primary) 0%,
+          var(--accent) 100%
+        );
+        color: white;
+        padding: 80px 0;
+        text-align: center;
+        margin-bottom: 50px;
+      }
+
+      .hero h1 {
+        font-size: 48px;
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+
+      .hero p {
+        font-size: 20px;
+        opacity: 0.95;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      /* Section Styles */
+      section {
+        background: var(--bg-white);
+        border-radius: 12px;
+        padding: 40px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 6px var(--shadow);
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      section:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 12px var(--shadow-lg);
+      }
+
+      section h2 {
+        color: var(--primary);
+        font-size: 32px;
+        margin-bottom: 20px;
+        padding-bottom: 15px;
+        border-bottom: 3px solid var(--secondary);
+      }
+
+      section h3 {
+        color: var(--accent);
+        font-size: 24px;
+        margin: 30px 0 15px 0;
+      }
+
+      section h4 {
+        color: var(--text-dark);
+        font-size: 18px;
+        margin: 20px 0 10px 0;
+        font-weight: 600;
+      }
+
+      /* Grid Layouts */
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin: 20px 0;
+      }
+
+      .card {
+        background: var(--bg-light);
+        padding: 25px;
+        border-radius: 8px;
+        border-left: 4px solid var(--primary);
+        transition: all 0.3s;
+      }
+
+      .card:hover {
+        background: #e9ecef;
+        transform: translateX(5px);
+      }
+
+      .card h4 {
+        color: var(--primary);
+        margin-bottom: 10px;
+      }
+
+      /* Timeline */
+      .timeline {
+        position: relative;
+        padding-left: 40px;
+        margin: 30px 0;
+      }
+
+      .timeline::before {
+        content: "";
+        position: absolute;
+        left: 15px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: var(--primary);
+      }
+
+      .timeline-item {
+        position: relative;
+        margin-bottom: 30px;
+        padding: 20px;
+        background: var(--bg-light);
+        border-radius: 8px;
+      }
+
+      .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -32px;
+        top: 25px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--primary);
+        border: 3px solid var(--bg-white);
+      }
+
+      /* Lists */
+      ul,
+      ol {
+        margin-left: 20px;
+        margin-bottom: 15px;
+      }
+
+      li {
+        margin-bottom: 8px;
+        line-height: 1.8;
+      }
+
+      /* Badges and Tags */
+      .badge {
+        display: inline-block;
+        padding: 5px 12px;
+        background: var(--primary);
+        color: white;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 600;
+        margin: 5px 5px 5px 0;
+      }
+
+      .badge-success {
+        background: var(--success);
+      }
+
+      .badge-secondary {
+        background: var(--secondary);
+        color: var(--text-dark);
+      }
+
+      /* Stats */
+      .stats {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 20px;
+        margin: 30px 0;
+      }
+
+      .stat {
+        text-align: center;
+        padding: 20px;
+        background: var(--bg-light);
+        border-radius: 8px;
+        min-width: 150px;
+      }
+
+      .stat-number {
+        font-size: 36px;
+        font-weight: 700;
+        color: var(--primary);
+        display: block;
+      }
+
+      .stat-label {
+        color: var(--text-light);
+        font-size: 14px;
+        margin-top: 5px;
+      }
+
+      /* Buttons */
+      .btn {
+        display: inline-block;
+        padding: 12px 30px;
+        background: var(--primary);
+        color: white;
+        text-decoration: none;
+        border-radius: 6px;
+        font-weight: 600;
+        transition: all 0.3s;
+        border: none;
+        cursor: pointer;
+      }
+
+      .btn:hover {
+        background: var(--primary-light);
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px var(--shadow);
+      }
+
+      .btn-secondary {
+        background: var(--secondary);
+        color: var(--text-dark);
+      }
+
+      /* Highlight Box */
+      .highlight {
+        background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+        padding: 25px;
+        border-radius: 8px;
+        border-left: 5px solid var(--secondary);
+        margin: 20px 0;
+      }
+
+      .highlight h4 {
+        color: var(--accent);
+        margin-bottom: 10px;
+      }
+
+      /* Table */
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 20px 0;
+      }
+
+      th,
+      td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid var(--border);
+      }
+
+      th {
+        background: var(--primary);
+        color: white;
+        font-weight: 600;
+      }
+
+      tr:hover {
+        background: var(--bg-light);
+      }
+
+      /* Contact Info */
+      .contact {
+        background: var(--accent);
+        color: white;
+        padding: 30px;
+        border-radius: 12px;
+        text-align: center;
+        margin-top: 50px;
+      }
+
+      .contact h2 {
+        color: white;
+        border-bottom: 3px solid var(--secondary);
+        margin-bottom: 20px;
+      }
+
+      .contact-info {
+        font-size: 20px;
+        font-weight: 600;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .hero h1 {
+          font-size: 32px;
+        }
+
+        .hero p {
+          font-size: 18px;
+        }
+
+        section {
+          padding: 25px;
+        }
+
+        .nav-links {
+          flex-direction: column;
+          gap: 10px;
+        }
+
+        .stats {
+          flex-direction: column;
+        }
+      }
+
+      /* Smooth Scroll */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Print Styles */
+      @media print {
+        nav {
+          display: none;
+        }
+
+        section {
+          page-break-inside: avoid;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="container">
+        <div class="logo">XanaLife Digital Transformation</div>
+        <ul class="nav-links">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#solutions">Solutions</a></li>
+          <li><a href="#roadmap">Roadmap</a></li>
+          <li><a href="#quick-wins">Quick Wins</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <div class="container">
+        <h1>Let's Make XanaLife the Neighborhood Favorite</h1>
+        <p>
+          Your neighbor & creative partner | Software Engineer + Filmmaker +
+          Designer
+        </p>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- Overview Section -->
+      <section id="overview">
+        <h2>🎯 Current Situation & Opportunity</h2>
+
+        <div class="stats">
+          <div class="stat">
+            <span class="stat-number">32</span>
+            <span class="stat-label">Instagram Followers</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">11</span>
+            <span class="stat-label">Posts</span>
+          </div>
+          <div class="stat">
+            <span class="stat-number">0</span>
+            <span class="stat-label">Online Ordering</span>
+          </div>
+        </div>
+
+        <h3>What I See</h3>
+        <div class="grid">
+          <div class="card">
+            <h4>✅ Strengths</h4>
+            <ul>
+              <li>Great in-store experience</li>
+              <li>Community involvement (World Pharmacists Day)</li>
+              <li>Multiple service offerings</li>
+              <li>Beautiful store layout</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>❓ Challenges</h4>
+            <ul>
+              <li>Brand identity confusion</li>
+              <li>Low digital visibility</li>
+              <li>No online ordering</li>
+              <li>Limited social media presence</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>🚀 Opportunity</h4>
+            <ul>
+              <li>Transform confusion into clarity</li>
+              <li>Build engaged local community</li>
+              <li>Capture online customers</li>
+              <li>Become neighborhood #1 choice</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="highlight">
+          <h4>The Core Question</h4>
+          <p><strong>"What exactly is XanaLife?"</strong></p>
+          <p>Pharmacy? Supermarket? Wholesale? Deli? Wine Shop?</p>
+          <p><strong>Answer: ALL OF THE ABOVE!</strong></p>
+          <p><strong>Problem: That's not clear to your neighbors.</strong></p>
+        </div>
+      </section>
+
+      <!-- Solutions Section -->
+      <section id="solutions">
+        <h2>💡 Complete Solution Package</h2>
+
+        <div class="grid">
+          <div class="card">
+            <h4>1. Brand Clarity</h4>
+            <p>
+              <strong>Position XanaLife as:</strong> "Your Neighborhood
+              Everything Store"
+            </p>
+            <ul>
+              <li>Clear messaging framework</li>
+              <li>Brand guidelines</li>
+              <li>Social media templates</li>
+              <li>Consistent visual identity</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h4>2. Content Strategy</h4>
+            <p><strong>5 Content Pillars:</strong></p>
+            <ol>
+              <li>Product Spotlights</li>
+              <li>Pharmacy Tips</li>
+              <li>Meet the Team</li>
+              <li>Customer Love</li>
+              <li>Online Ordering</li>
+            </ol>
+          </div>
+
+          <div class="card">
+            <h4>3. Video Content</h4>
+            <p><strong>Professional Videos:</strong></p>
+            <ul>
+              <li>Store tour (60-90 sec)</li>
+              <li>"Meet Your Pharmacist" series</li>
+              <li>Product showcase reels</li>
+              <li>Customer testimonials</li>
+              <li>Behind-the-scenes content</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h4>4. Online Ordering</h4>
+            <p><strong>Phase 1 (2-3 weeks):</strong></p>
+            <ul>
+              <li>WhatsApp ordering system</li>
+              <li>Product catalog</li>
+              <li>Order management</li>
+              <li>Staff training</li>
+            </ul>
+            <p><strong>Phase 2 (2-3 months):</strong></p>
+            <ul>
+              <li>Full e-commerce platform</li>
+              <li>M-Pesa integration</li>
+              <li>Delivery management</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h4>5. Social Media Growth</h4>
+            <p><strong>Strategy:</strong></p>
+            <ul>
+              <li>3-4 posts per week</li>
+              <li>Daily stories</li>
+              <li>Local hashtag targeting</li>
+              <li>Community engagement</li>
+              <li><strong>Goal: 500+ followers in 6 months</strong></li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h4>6. Community Events</h4>
+            <p><strong>Leverage Your Strength:</strong></p>
+            <ul>
+              <li>Monthly wellness workshops</li>
+              <li>"Meet Your Pharmacist" sessions</li>
+              <li>Cooking demos</li>
+              <li>Kids' health days</li>
+              <li>Loyalty program events</li>
+            </ul>
+            <p><em>My role: Film, promote, create buzz</em></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6-Month Roadmap -->
+      <section id="roadmap">
+        <h2>📈 6-Month Transformation Roadmap</h2>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <h4>MONTHS 1-2: Foundation</h4>
+            <ul>
+              <li>✓ Brand clarity and messaging</li>
+              <li>✓ Social media content calendar</li>
+              <li>✓ Website improvements</li>
+              <li>✓ First 3-5 professional videos</li>
+              <li>✓ Social media templates</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <h4>MONTHS 3-4: Momentum</h4>
+            <ul>
+              <li>✓ Consistent 3x per week posting</li>
+              <li>✓ WhatsApp ordering launched</li>
+              <li>✓ First community event filmed</li>
+              <li>✓ Instagram followers: 200+</li>
+              <li>✓ Customer testimonials collected</li>
+            </ul>
+          </div>
+
+          <div class="timeline-item">
+            <h4>MONTHS 5-6: Scale</h4>
+            <ul>
+              <li>✓ Full e-commerce platform (optional)</li>
+              <li>✓ Instagram followers: 500+</li>
+              <li>✓ Monthly video series established</li>
+              <li>✓ Measurable increase in walk-ins</li>
+              <li>✓ Online orders becoming regular revenue</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- First 30 Days Plan -->
+      <section id="first-30-days">
+        <h2>🚀 First 30 Days Action Plan</h2>
+        <p><em>Demonstrating Immediate Value to Build Trust</em></p>
+
+        <h3>Week 1: Discovery & Foundation</h3>
+        <div class="grid">
+          <div class="card">
+            <h4>Day 1-2: Deep Dive</h4>
+            <ul>
+              <li>Interview Esther & staff</li>
+              <li>Store walkthrough & photography</li>
+              <li>Website & social media analysis</li>
+              <li>Customer surveys (10 in-store)</li>
+            </ul>
+            <p>
+              <strong>Deliverables:</strong> Discovery report, customer
+              personas, competitor analysis
+            </p>
+          </div>
+          <div class="card">
+            <h4>Day 3-4: Brand Workshop</h4>
+            <ul>
+              <li>Brand positioning session</li>
+              <li>Define key messages</li>
+              <li>Identify unique selling points</li>
+              <li>Target audience definition</li>
+            </ul>
+            <p>
+              <strong>Deliverables:</strong> Brand messaging doc, optimized
+              social bios
+            </p>
+          </div>
+          <div class="card">
+            <h4>Day 5-7: Content Planning</h4>
+            <ul>
+              <li>90-day content calendar</li>
+              <li>Define 5 content pillars</li>
+              <li>Plan first 12 posts</li>
+              <li>Identify products to highlight</li>
+            </ul>
+            <p>
+              <strong>Deliverables:</strong> Content calendar, posting schedule
+            </p>
+          </div>
+        </div>
+
+        <h3>Week 2: Content Creation Begins</h3>
+        <div class="grid">
+          <div class="card">
+            <h4>Day 8-10: Video Production</h4>
+            <ul>
+              <li><strong>Video 1:</strong> Store Tour (60-90 sec)</li>
+              <li>
+                <strong>Video 2:</strong> "Meet Your Pharmacist" (45-60 sec)
+              </li>
+              <li>
+                <strong>Video 3:</strong> Product Showcase Reel (30-45 sec)
+              </li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>Day 11-14: Editing & Graphics</h4>
+            <ul>
+              <li>Edit all 3 videos</li>
+              <li>Add captions</li>
+              <li>Create 10 Instagram templates</li>
+              <li>Design story templates</li>
+              <li>Export multiple formats</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>Week 3: Online Ordering Setup</h3>
+        <div class="grid">
+          <div class="card">
+            <h4>Day 15-16: WhatsApp System Design</h4>
+            <ul>
+              <li>Product catalog (100-150 items)</li>
+              <li>Order form template</li>
+              <li>Automated messages</li>
+              <li>Business profile optimization</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>Day 17-18: Staff Training</h4>
+            <ul>
+              <li>Order receiving process</li>
+              <li>Payment collection</li>
+              <li>Order preparation</li>
+              <li>Customer communication</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>Day 19-21: Test & Launch</h4>
+            <ul>
+              <li>Internal testing</li>
+              <li>Beta test with 10 customers</li>
+              <li>Launch campaign creation</li>
+              <li>Social media announcement</li>
+            </ul>
+          </div>
+        </div>
+
+        <h3>Week 4: Launch & Amplification</h3>
+        <div class="grid">
+          <div class="card">
+            <h4>Day 22-24: Social Media Blitz</h4>
+            <ul>
+              <li>Release all 3 videos</li>
+              <li>Online ordering announcement</li>
+              <li>Product spotlights</li>
+              <li>Customer testimonials</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>Day 25-27: Community Engagement</h4>
+            <ul>
+              <li>Respond to all comments</li>
+              <li>Share customer content</li>
+              <li>Run engagement campaigns</li>
+              <li>Local business partnerships</li>
+            </ul>
+          </div>
+          <div class="card">
+            <h4>Day 28-30: Analysis & Optimization</h4>
+            <ul>
+              <li>Review Instagram insights</li>
+              <li>Track online orders</li>
+              <li>Collect feedback</li>
+              <li>30-day report</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="highlight">
+          <h4>30-Day Success Metrics</h4>
+          <div class="stats">
+            <div class="stat">
+              <span class="stat-number">100+</span>
+              <span class="stat-label">Instagram Followers</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">20-30</span>
+              <span class="stat-label">Online Orders (Week 1)</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">500+</span>
+              <span class="stat-label">Video Views</span>
+            </div>
+            <div class="stat">
+              <span class="stat-number">15-20%</span>
+              <span class="stat-label">Walk-in Increase</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Quick Wins -->
+      <section id="quick-wins">
+        <h2>⚡ Quick Wins Package</h2>
+        <p><em>Show Immediate Value Within 2-4 Weeks</em></p>
+
+        <div class="grid">
+          <div class="card">
+            <h4>1. Social Media Audit + Strategy</h4>
+            <ul>
+              <li>Current presence analysis</li>
+              <li>Competitor research</li>
+              <li>90-day content plan</li>
+              <li>Hashtag strategy</li>
+              <li><strong>Timeline: 1 week</strong></li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h4>2. Professional Video Content</h4>
+            <ul>
+              <li>Store tour video</li>
+              <li>Customer testimonial</li>
+              <li>Product highlight reel</li>
+              <li>Multiple formats (IG, FB, website)</li>
+              <li><strong>Timeline: 2 weeks</strong></li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h4>3. Instagram Content Bundle</h4>
+            <ul>
+              <li>10 custom post templates</li>
+              <li>5 story templates</li>
+              <li>Bio optimization</li>
+              <li>Highlight cover designs</li>
+              <li><strong>Timeline: 1 week</strong></li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h4>4. WhatsApp Ordering Setup</h4>
+            <ul>
+              <li>Product catalog (100-150 items)</li>
+              <li>Order management system</li>
+              <li>Staff training</li>
+              <li>Launch campaign</li>
+              <li><strong>Timeline: 1-2 weeks</strong></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="highlight">
+          <h4>Total Time Investment: ~95 hours over 30 days</h4>
+          <p>
+            Week 1: 25 hours | Week 2: 30 hours | Week 3: 20 hours | Week 4: 20
+            hours
+          </p>
+        </div>
+      </section>
+
+      <!-- Why Me -->
+      <section id="why-me">
+        <h2>🌟 Why Partner With Me?</h2>
+
+        <div class="grid">
+          <div class="card">
+            <h4>🏘️ Local Neighbor</h4>
+            <p>
+              I live in the neighborhood - your success is my success. I
+              understand the local market and community needs.
+            </p>
+          </div>
+
+          <div class="card">
+            <h4>🎨 3-in-1 Expert</h4>
+            <p>
+              Software Engineering + Film & Animation + Graphic Design. No need
+              for multiple vendors - consistent vision across all deliverables.
+            </p>
+          </div>
+
+          <div class="card">
+            <h4>💡 Strategic Thinker</h4>
+            <p>
+              Not just execution, but strategy. I understand the local market
+              and make data-driven decisions.
+            </p>
+          </div>
+
+          <div class="card">
+            <h4>🤝 Long-Term Partnership</h4>
+            <p>
+              Not just a one-time project. I'm invested in your growth and
+              committed to responsive collaboration.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Questions -->
+      <section id="questions">
+        <h2>💭 Key Questions for You, Esther</h2>
+
+        <div class="grid">
+          <div class="card">
+            <h4>Vision & Goals</h4>
+            <ul>
+              <li>What's your vision for XanaLife in 1 year? 3 years?</li>
+              <li>What does success look like for you?</li>
+              <li>What are your biggest frustrations right now?</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h4>Customers & Market</h4>
+            <ul>
+              <li>Who is your ideal customer?</li>
+              <li>Who else is competing for your customers?</li>
+              <li>What products/services are you most proud of?</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h4>Digital & Operations</h4>
+            <ul>
+              <li>Have you tried digital marketing before? What happened?</li>
+              <li>What's your comfort level with online ordering?</li>
+              <li>How do you currently track customers and sales?</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Collaboration Models -->
+      <section id="collaboration">
+        <h2>🤝 Collaboration Models</h2>
+
+        <div class="grid">
+          <div class="card">
+            <h4>Option A: Full-Service Partnership</h4>
+            <p>
+              Complete digital marketing, content creation, and technical
+              support. Comprehensive ongoing partnership.
+            </p>
+          </div>
+
+          <div class="card">
+            <h4>Option B: Project-Based</h4>
+            <p>
+              Specific deliverables like website, videos, or online ordering
+              system. One-time projects with defined scope.
+            </p>
+          </div>
+
+          <div class="card">
+            <h4>Option C: Monthly Retainer</h4>
+            <p>
+              Ongoing content creation and growth management. Consistent monthly
+              support for social media and marketing.
+            </p>
+          </div>
+
+          <div class="card">
+            <h4>Option D: Custom Hybrid</h4>
+            <p>
+              Mix and match based on your specific needs and budget. Flexible
+              approach tailored to your priorities.
+            </p>
+          </div>
+        </div>
+
+        <div class="highlight">
+          <h4>Investment Approach</h4>
+          <p><strong>Not about pricing today - about priorities.</strong></p>
+          <p>
+            After this meeting, I'll create a tailored proposal based on your
+            specific needs, goals, and budget. We can start with a pilot project
+            to prove value, then expand.
+          </p>
+        </div>
+      </section>
+
+      <!-- My Commitment -->
+      <section id="commitment">
+        <h2>✅ My Commitment to XanaLife</h2>
+
+        <div class="grid">
+          <div class="card">
+            <h4>Quality Work</h4>
+            <p>
+              Deliverables that reflect well on both of us and drive real
+              business results.
+            </p>
+          </div>
+
+          <div class="card">
+            <h4>Clear Communication</h4>
+            <p>
+              Weekly check-ins, daily updates, transparent reporting, and
+              flexible collaboration.
+            </p>
+          </div>
+
+          <div class="card">
+            <h4>Measurable Results</h4>
+            <p>
+              Not just pretty content - data-driven growth with clear metrics
+              and analytics.
+            </p>
+          </div>
+
+          <div class="card">
+            <h4>Flexibility</h4>
+            <p>
+              Adapt based on what works. Adjust strategy based on real-world
+              feedback and results.
+            </p>
+          </div>
+
+          <div class="card">
+            <h4>Long-Term Mindset</h4>
+            <p>
+              Partnership, not just projects. Invested in your growth and
+              success.
+            </p>
+          </div>
+        </div>
+
+        <p
+          style="
+            text-align: center;
+            font-size: 20px;
+            margin-top: 20px;
+            font-weight: 600;
+            color: var(--primary);
+          "
+        >
+          <strong>Your success = My success</strong>
+        </p>
+      </section>
+
+      <!-- Next Steps -->
+      <section id="next-steps">
+        <h2>📞 Next Steps</h2>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <h4>Today: Discovery Meeting</h4>
+            <p>
+              Understand your needs, goals, challenges, and priorities. Listen
+              more than talk.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <h4>Tomorrow: Follow-Up</h4>
+            <p>
+              Send summary email with key points from our conversation and next
+              steps.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <h4>This Week: Customized Proposal</h4>
+            <p>
+              Create tailored proposal based on your priorities, including
+              specific deliverables and timeline.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <h4>Next Week: Pilot Project</h4>
+            <p>
+              Start with quick wins package to demonstrate value and build
+              trust.
+            </p>
+          </div>
+
+          <div class="timeline-item">
+            <h4>Ongoing: Scale Partnership</h4>
+            <p>
+              Expand into comprehensive digital partnership based on results and
+              your needs.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section id="contact" class="contact">
+        <h2>Let's Transform XanaLife's Digital Presence!</h2>
+        <p style="font-size: 24px; margin: 20px 0">
+          From 32 followers → Local favorite
+        </p>
+        <p style="font-size: 24px; margin: 20px 0">
+          From confusion → Crystal clarity
+        </p>
+        <p style="font-size: 24px; margin: 20px 0">
+          From walk-ins only → Omnichannel powerhouse
+        </p>
+
+        <div
+          style="
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 2px solid var(--secondary);
+          "
+        >
+          <div class="contact-info">
+            <p style="font-size: 28px; margin-bottom: 10px">Leon Kioko</p>
+            <p style="font-size: 20px; opacity: 0.9">
+              Your Neighbor & Creative Partner
+            </p>
+          </div>
+        </div>
+
+        <p style="margin-top: 30px; font-size: 18px; font-style: italic">
+          "Every Day Better" - Let's make it happen digitally! 🚀
+        </p>
+        <p style="margin-top: 15px; font-size: 16px">
+          <strong>Ready to make XanaLife the talk of Syokimau!</strong>
+        </p>
+      </section>
+    </div>
+
+    <script>
+      // Smooth scroll for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+
+      // Add active class to navigation based on scroll position
+      window.addEventListener("scroll", () => {
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll(".nav-links a");
+
+        let current = "";
+        sections.forEach((section) => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          if (window.pageYOffset >= sectionTop - 100) {
+            current = section.getAttribute("id");
+          }
+        });
+
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+          if (link.getAttribute("href") === `#${current}`) {
+            link.classList.add("active");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
